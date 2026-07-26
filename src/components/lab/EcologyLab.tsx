@@ -109,7 +109,21 @@ export function EcologyLab() {
 }
 
 function BiodegradableSort() {
-  const items = useMemo(() => [...BIODEGRADABLE, ...NON_BIODEGRADABLE].sort(() => 0.5 - Math.random()), []);
+  // Deterministic interleave keeps SSR and client markup identical (no hydration mismatch).
+  const items = useMemo(() => {
+    const out: string[] = [];
+    const max = Math.max(BIODEGRADABLE.length, NON_BIODEGRADABLE.length);
+    for (let i = 0; i < max; i++) {
+      if (i % 2 === 0) {
+        if (BIODEGRADABLE[i]) out.push(BIODEGRADABLE[i]);
+        if (NON_BIODEGRADABLE[i]) out.push(NON_BIODEGRADABLE[i]);
+      } else {
+        if (NON_BIODEGRADABLE[i]) out.push(NON_BIODEGRADABLE[i]);
+        if (BIODEGRADABLE[i]) out.push(BIODEGRADABLE[i]);
+      }
+    }
+    return out;
+  }, []);
   const [answers, setAnswers] = useState<Record<string, "biodegradable" | "non-biodegradable" | undefined>>({});
 
   const check = (item: string, guess: "biodegradable" | "non-biodegradable") => {
