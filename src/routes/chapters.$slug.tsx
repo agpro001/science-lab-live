@@ -4,7 +4,7 @@ import { allChapters, getChapter, subjectClass, subjectLabel } from "@/data/chap
 import { DiagramTrainer } from "@/components/DiagramTrainer";
 import { QuizBlock } from "@/components/QuizBlock";
 import { LiveLab } from "@/components/lab";
-import type { Numerical } from "@/data/types";
+import type { Chapter, Numerical } from "@/data/types";
 
 export const Route = createFileRoute("/chapters/$slug")({
   loader: ({ params }) => {
@@ -85,7 +85,7 @@ function NumericalCard({ n }: { n: Numerical }) {
 }
 
 function ChapterPage() {
-  const { chapter } = Route.useLoaderData();
+  const { chapter } = Route.useLoaderData() as { chapter: Chapter };
   const [tab, setTab] = useState<Tab>("lab");
   const idx = allChapters.findIndex((c) => c.slug === chapter.slug);
   const prev = allChapters[idx - 1];
