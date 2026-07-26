@@ -6,8 +6,7 @@ type Device = "concave-mirror" | "convex-mirror" | "convex-lens" | "concave-lens
 const W = 640;
 const H = 320;
 const AXIS = H / 2;
-const ORIGIN = W / 2;
-const SCALE = 6; // px per cm
+const SCALE = 4; // px per cm
 
 export function OpticsLab() {
   const [device, setDevice] = useState<Device>("concave-mirror");
@@ -16,6 +15,7 @@ export function OpticsLab() {
   const [h, setH] = useState(6);
 
   const isMirror = device.includes("mirror");
+  const ORIGIN = isMirror ? 470 : 320;
   const f = device === "concave-mirror" ? -f0 : device === "convex-mirror" ? f0 : device === "convex-lens" ? f0 : -f0;
   const u = -u0; // object always left of the optical element
 
