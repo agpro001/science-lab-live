@@ -56,6 +56,12 @@ export type BoardQuestion = {
   q: string;
   marks: number;
   answer: string[];
+  /** Question style shown as a badge in the Board Q&A tab. */
+  kind?: "MCQ" | "Short answer" | "Long answer" | "Case-based" | "Assertion-Reason";
+  /** Optional case-study passage shown above a case-based question. */
+  caseText?: string;
+  /** Options for MCQ-style board questions. */
+  options?: string[];
 };
 
 /** Primitive shapes for the code-drawn diagram engine (no images anywhere). */
