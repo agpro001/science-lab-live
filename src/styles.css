@@ -61,6 +61,20 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme inline {
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-physics: var(--physics);
+  --color-chemistry: var(--chemistry);
+  --color-biology: var(--biology);
+  --color-glass: var(--glass-bg);
+  --color-glass-strong: var(--glass-bg-strong);
+  --color-glass-border: var(--glass-border);
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
 :root {
   --radius: 1rem;
   /* Midnight Indigo glass palette */
