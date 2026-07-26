@@ -53,7 +53,8 @@ export type QuizQuestion = {
 };
 
 export type BoardQuestion = {
-  q: string;
+  /** Single question, or an array of sub-questions for case-based items. */
+  q: string | string[];
   marks: number;
   answer: string[];
   /** Question style shown as a badge in the Board Q&A tab. */

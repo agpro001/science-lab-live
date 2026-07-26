@@ -136,11 +136,7 @@ export const extraBiology: Record<string, ExtraContent> = {
       {
         kind: "Case-based",
         caseText: "A doctor examines a patient and finds high blood urea and reduced urine output. Kidney function tests confirm impaired filtration in the nephrons, and the doctor recommends dialysis.",
-        q: [
-          "What is the functional unit of the kidney where filtration occurs?",
-          "Name the treatment used when kidneys fail, and briefly explain its principle.",
-          "Why does urea accumulate in the blood when nephrons are damaged?",
-        ],
+        q: "1. What is the functional unit of the kidney where filtration occurs? 2. Name the treatment used when kidneys fail, and briefly explain its principle. 3. Why does urea accumulate in the blood when nephrons are damaged?",
         marks: 5,
         answer: [
           "The nephron is the functional unit; filtration occurs at the glomerulus into Bowman's capsule.",
@@ -304,11 +300,7 @@ export const extraBiology: Record<string, ExtraContent> = {
       {
         kind: "Case-based",
         caseText: "A student accidentally touches a hot utensil and immediately withdraws his hand before he consciously feels the pain, which he registers only a moment later.",
-        q: [
-          "What kind of action is the withdrawal of the hand?",
-          "Which part of the CNS controls this immediate response, and why is this arrangement useful?",
-          "Why does the student feel the pain only after withdrawing the hand?",
-        ],
+        q: "1. What kind of action is the withdrawal of the hand? 2. Which part of the CNS controls this immediate response, and why is this arrangement useful? 3. Why does the student feel the pain only after withdrawing the hand?",
         marks: 5,
         answer: [
           "It is a reflex action — an involuntary, rapid response to a harmful stimulus.",
@@ -475,11 +467,7 @@ export const extraBiology: Record<string, ExtraContent> = {
       {
         kind: "Case-based",
         caseText: "A gardener notices that a potato left in a warm, moist place develops small buds ('eyes') that later grow into new potato plants when planted, without the need for seeds.",
-        q: [
-          "What type of reproduction is illustrated here?",
-          "Name this specific method and identify what structure gives rise to the new plant.",
-          "State one advantage of this method over seed propagation for the gardener.",
-        ],
+        q: "1. What type of reproduction is illustrated here? 2. Name this specific method and identify what structure gives rise to the new plant. 3. State one advantage of this method over seed propagation for the gardener.",
         marks: 5,
         answer: [
           "This is asexual reproduction (vegetative propagation).",
@@ -647,11 +635,7 @@ export const extraBiology: Record<string, ExtraContent> = {
       {
         kind: "Case-based",
         caseText: "In an experiment, Mendel crossed pea plants with round, yellow seeds (RRYY) with plants having wrinkled, green seeds (rryy). All F1 plants had round, yellow seeds. When F1 plants were self-pollinated, F2 showed four types of seeds in the ratio 9:3:3:1, including new combinations like round-green and wrinkled-yellow.",
-        q: [
-          "Why did all F1 plants show only round, yellow seeds?",
-          "What do the new combinations (round-green, wrinkled-yellow) in F2 indicate?",
-          "State the F2 ratio and what law of Mendel it demonstrates.",
-        ],
+        q: "1. Why did all F1 plants show only round, yellow seeds? 2. What do the new combinations (round-green, wrinkled-yellow) in F2 indicate? 3. State the F2 ratio and what law of Mendel it demonstrates.",
         marks: 5,
         answer: [
           "Round and yellow are dominant traits, so F1 (RrYy) shows only the dominant phenotypes even though it carries recessive alleles.",
@@ -810,11 +794,7 @@ export const extraBiology: Record<string, ExtraContent> = {
       {
         kind: "Case-based",
         caseText: "A locality generates large amounts of plastic bags and packaging waste that are dumped in open areas. Over time, animals are seen choking on the plastic, drains get blocked causing flooding, and the soil in that area becomes less fertile.",
-        q: [
-          "Why does the plastic waste persist in the environment for so long?",
-          "Suggest two ways this waste problem could be managed by the local municipality and residents.",
-          "How does such waste affect soil fertility and ecosystems?",
-        ],
+        q: "1. Why does the plastic waste persist in the environment for so long? 2. Suggest two ways this waste problem could be managed by the local municipality and residents. 3. How does such waste affect soil fertility and ecosystems?",
         marks: 5,
         answer: [
           "Plastic is non-biodegradable — microorganisms cannot break it down, so it persists in the environment for hundreds of years.",
