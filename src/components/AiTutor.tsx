@@ -119,7 +119,7 @@ export function AiTutor({ context }: { context?: string }) {
                     }`}
                   >
                     {m.role === "assistant" ? (
-                      <div className="prose prose-sm prose-invert max-w-none prose-headings:font-display prose-p:my-1.5 prose-li:my-0.5 prose-strong:text-foreground">
+                      <div className="md-body">
                         <ReactMarkdown>{messageText(m.parts)}</ReactMarkdown>
                       </div>
                     ) : (
