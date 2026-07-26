@@ -9,9 +9,9 @@ function renderShape(s: Shape, i: number) {
     case "rect":
       return <rect key={i} x={s.x} y={s.y} width={s.w} height={s.h} rx={s.r ?? 4} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={2} />;
     case "circle":
-      return <circle key={i} cx={s.cx} cy={s.cy} r={s.r} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={2} />;
+      return <circle key={i} cx={s.cx} cy={s.cy} r={s.r} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={s.w ?? 2} strokeDasharray={s.dash} />;
     case "ellipse":
-      return <ellipse key={i} cx={s.cx} cy={s.cy} rx={s.rx} ry={s.ry} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={2} />;
+      return <ellipse key={i} cx={s.cx} cy={s.cy} rx={s.rx} ry={s.ry} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={s.w ?? 2} strokeDasharray={s.dash} />;
     case "path":
       return <path key={i} d={s.d} stroke={stroke} fill={s.fill ?? "none"} strokeWidth={s.w ?? 2} strokeDasharray={s.dash} strokeLinecap="round" />;
     case "text":

@@ -53,17 +53,24 @@ export type QuizQuestion = {
 };
 
 export type BoardQuestion = {
-  q: string;
+  /** Single question, or an array of sub-questions for case-based items. */
+  q: string | string[];
   marks: number;
   answer: string[];
+  /** Question style shown as a badge in the Board Q&A tab. */
+  kind?: "MCQ" | "Short answer" | "Long answer" | "Case-based" | "Assertion-Reason";
+  /** Optional case-study passage shown above a case-based question. */
+  caseText?: string;
+  /** Options for MCQ-style board questions. */
+  options?: string[];
 };
 
 /** Primitive shapes for the code-drawn diagram engine (no images anywhere). */
 export type Shape =
   | { k: "line"; x1: number; y1: number; x2: number; y2: number; c?: string; w?: number; dash?: string }
   | { k: "rect"; x: number; y: number; w: number; h: number; c?: string; fill?: string; r?: number }
-  | { k: "circle"; cx: number; cy: number; r: number; c?: string; fill?: string }
-  | { k: "ellipse"; cx: number; cy: number; rx: number; ry: number; c?: string; fill?: string }
+  | { k: "circle"; cx: number; cy: number; r: number; c?: string; fill?: string; dash?: string; w?: number }
+  | { k: "ellipse"; cx: number; cy: number; rx: number; ry: number; c?: string; fill?: string; dash?: string; w?: number }
   | { k: "path"; d: string; c?: string; fill?: string; w?: number; dash?: string }
   | { k: "text"; x: number; y: number; t: string; size?: number; c?: string };
 
