@@ -4,6 +4,7 @@ import { allChapters, getChapter, subjectClass, subjectLabel } from "@/data/chap
 import { DiagramTrainer } from "@/components/DiagramTrainer";
 import { QuizBlock } from "@/components/QuizBlock";
 import { LiveLab } from "@/components/lab";
+import { AiTutor } from "@/components/AiTutor";
 import type { Chapter, Numerical } from "@/data/types";
 
 export const Route = createFileRoute("/chapters/$slug")({
@@ -243,10 +244,28 @@ function ChapterPage() {
           <div className="space-y-4">
             {chapter.board.map((b) => (
               <article key={b.q} className="glass rounded-3xl p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="font-medium">{b.q}</p>
-                  <span className="shrink-0 rounded-full bg-primary/20 px-3 py-1 text-xs">{b.marks} marks</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full border border-glass-border bg-glass px-3 py-1 text-[11px] uppercase tracking-wide text-accent">
+                    {b.kind ?? "Short answer"}
+                  </span>
+                  <span className="rounded-full bg-primary/20 px-3 py-1 text-xs">{b.marks} marks</span>
                 </div>
+                {b.caseText && (
+                  <p className="mt-3 rounded-2xl border border-glass-border bg-glass px-4 py-3 text-sm text-muted-foreground">
+                    {b.caseText}
+                  </p>
+                )}
+                <p className="mt-3 font-medium">{b.q}</p>
+                {b.options && (
+                  <ol className="mt-3 grid gap-2 sm:grid-cols-2">
+                    {b.options.map((o, i) => (
+                      <li key={o} className="rounded-2xl border border-glass-border bg-glass px-3 py-2 text-sm">
+                        <span className="mr-2 text-xs text-muted-foreground">{"abcd"[i]})</span>
+                        {o}
+                      </li>
+                    ))}
+                  </ol>
+                )}
                 <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
                   {b.answer.map((a) => <li key={a}>{a}</li>)}
                 </ul>
@@ -315,6 +334,8 @@ function ChapterPage() {
           </Link>
         )}
       </nav>
+
+      <AiTutor context={`Chapter ${chapter.number}: ${chapter.title} (Class 10 ${subjectLabel[chapter.subject]})`} />
     </main>
   );
 }

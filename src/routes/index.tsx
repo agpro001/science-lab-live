@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { allChapters, subjectClass, subjectLabel } from "@/data/chapters";
+import { AiTutor } from "@/components/AiTutor";
+import { MadeByAditya } from "@/components/MadeByAditya";
 import type { Subject } from "@/data/types";
 
 export const Route = createFileRoute("/")({
@@ -72,6 +74,9 @@ function Index() {
             Try the Circuit Lab
           </Link>
         </div>
+        <div className="relative">
+          <MadeByAditya />
+        </div>
         <dl className="relative mt-9 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[
             { k: "Chapters", v: `${allChapters.length}` },
@@ -133,6 +138,8 @@ function Index() {
         </div>
         {chapters.length === 0 && <p className="mt-8 text-sm text-muted-foreground">No chapter matches that search.</p>}
       </section>
+
+      <AiTutor />
     </main>
   );
 }
