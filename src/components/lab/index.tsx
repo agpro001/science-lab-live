@@ -6,6 +6,14 @@ import { EquationBalancer } from "./EquationBalancer";
 import { OpticsLab } from "./OpticsLab";
 import { PhLab } from "./PhLab";
 import { PunnettLab } from "./PunnettLab";
+import { EyeLab } from "./EyeLab";
+import { MagnetismLab } from "./MagnetismLab";
+import { ReactivityLab } from "./ReactivityLab";
+import { CarbonBuilder } from "./CarbonBuilder";
+import { LifeProcessesLab } from "./LifeProcessesLab";
+import { ReflexLab } from "./ReflexLab";
+import { ReproductionLab } from "./ReproductionLab";
+import { EcologyLab } from "./EcologyLab";
 
 const REGISTRY: Record<string, ComponentType> = {
   "optics-lab": OpticsLab,
@@ -13,6 +21,14 @@ const REGISTRY: Record<string, ComponentType> = {
   "ph-lab": PhLab,
   "equation-balancer": EquationBalancer,
   "punnett-lab": PunnettLab,
+  "eye-lab": EyeLab,
+  "magnetism-lab": MagnetismLab,
+  "reactivity-lab": ReactivityLab,
+  "carbon-builder": CarbonBuilder,
+  "life-processes-lab": LifeProcessesLab,
+  "reflex-lab": ReflexLab,
+  "reproduction-lab": ReproductionLab,
+  "ecology-lab": EcologyLab,
 };
 
 export function LiveLab({ chapter }: { chapter: Chapter }) {
