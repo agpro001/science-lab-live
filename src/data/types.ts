@@ -68,8 +68,8 @@ export type BoardQuestion = {
 export type Shape =
   | { k: "line"; x1: number; y1: number; x2: number; y2: number; c?: string; w?: number; dash?: string }
   | { k: "rect"; x: number; y: number; w: number; h: number; c?: string; fill?: string; r?: number }
-  | { k: "circle"; cx: number; cy: number; r: number; c?: string; fill?: string }
-  | { k: "ellipse"; cx: number; cy: number; rx: number; ry: number; c?: string; fill?: string }
+  | { k: "circle"; cx: number; cy: number; r: number; c?: string; fill?: string; dash?: string; w?: number }
+  | { k: "ellipse"; cx: number; cy: number; rx: number; ry: number; c?: string; fill?: string; dash?: string; w?: number }
   | { k: "path"; d: string; c?: string; fill?: string; w?: number; dash?: string }
   | { k: "text"; x: number; y: number; t: string; size?: number; c?: string };
 
