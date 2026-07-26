@@ -242,8 +242,8 @@ function ChapterPage() {
 
         {tab === "board" && (
           <div className="space-y-4">
-            {chapter.board.map((b) => (
-              <article key={b.q} className="glass rounded-3xl p-5">
+            {chapter.board.map((b, bi) => (
+              <article key={`${bi}-${Array.isArray(b.q) ? b.q[0] : b.q}`} className="glass rounded-3xl p-5">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full border border-glass-border bg-glass px-3 py-1 text-[11px] uppercase tracking-wide text-accent">
                     {b.kind ?? "Short answer"}
@@ -255,7 +255,18 @@ function ChapterPage() {
                     {b.caseText}
                   </p>
                 )}
-                <p className="mt-3 font-medium">{b.q}</p>
+                {Array.isArray(b.q) ? (
+                  <ol className="mt-3 space-y-1.5 font-medium">
+                    {b.q.map((sq, i) => (
+                      <li key={sq} className="flex gap-2">
+                        <span className="text-muted-foreground">({["i", "ii", "iii", "iv", "v"][i] ?? i + 1})</span>
+                        <span>{sq}</span>
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="mt-3 font-medium">{b.q}</p>
+                )}
                 {b.options && (
                   <ol className="mt-3 grid gap-2 sm:grid-cols-2">
                     {b.options.map((o, i) => (
